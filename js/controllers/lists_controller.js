@@ -4,8 +4,12 @@ Sighties.ListsController = Ember.ArrayController.extend({
       var content = this.get('content');
       var clickedList = content.findBy('id', idOfClickedList);
       if (clickedList.get('isSelected')) {
-        // Go to edit mode
-        clickedList.set('isEditing', true);
+        if (clickedList.get('canEdit')) {
+          // Go to edit mode
+          clickedList.set('isEditing', true);
+        } else {
+          // No-op
+        }
       } else {
         // Clear selections and select clickedList
         content.forEach(function (item, index, enumerable) {
