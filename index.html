@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sighties</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script type="text/x-handlebars" data-template-name="lists">
+      <ul>
+      {{#each itemController="list"}}
+        {{#view Sighties.ListView}}
+        <li {{bind-attr class="isSelected:bold"}}>
+          IsEditing:{{isEditing}} 
+          {{#if isEditing}}
+            <input class="edit">
+          {{else}}
+            {{name}}
+          {{/if}}
+        </li>
+        {{/view}}
+      {{/each}}
+      </ul>
+    </script>
+
+    <script src="js/libs/jquery-1.10.2.min.js"></script>
+    <script src="js/libs/handlebars-1.0.0.js"></script>
+    <script src="js/libs/ember.js"></script>
+    <script src="js/libs/ember-data.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/models/list.js"></script>
+    <script src="js/controllers/list_controller.js"></script>
+    <script src="js/views/list_view.js"></script>
+    <script src="js/controllers/lists_controller.js"></script>
+  </body>
+</html>
+
