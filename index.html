@@ -8,13 +8,13 @@
   <body>
     <script type="text/x-handlebars" data-template-name="lists">
       <ul>
-      {{#each itemController="list"}}
+      {{#each list in controller itemController="list"}}
         {{#view Sighties.ListView}}
-        <li {{bind-attr class="isSelected:bold"}}>
+        <li class="list">
           {{#if isEditing}}
             {{edit-list class="edit" value=name focus-out="acceptChanges" insert-newline="acceptChanges"}}
           {{else}}
-            {{name}}
+            {{#linkTo "list" list}}{{name}}{{/linkTo}}
           {{/if}}
         </li>
         {{/view}}
