@@ -4,8 +4,17 @@ body {
 	padding: 0;
 }
 
+div#list-master {
+  float: left;
+}
+
+div#list-detail {
+  float: right;
+}
+
 li.list a:link, a:visited, a:hover, a:active {
   text-decoration: none;
+  color: #000;
 }
 
 li.list a.active:link, a.active:visited, a.active:active {

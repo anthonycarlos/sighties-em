@@ -7,19 +7,31 @@
   </head>
   <body>
     <script type="text/x-handlebars" data-template-name="lists">
-      <ul>
-      {{#each list in controller itemController="list"}}
-        {{#view Sighties.ListView}}
-        <li class="list">
-          {{#if isEditing}}
-            {{edit-list class="edit" value=name focus-out="acceptChanges" insert-newline="acceptChanges"}}
-          {{else}}
-            {{#linkTo "list" list}}{{name}}{{/linkTo}}
-          {{/if}}
-        </li>
-        {{/view}}
-      {{/each}}
-      </ul>
+      <div id="list-master">
+        <h2>Lists</h2>
+        <ul>
+        {{#each list in controller itemController="list"}}
+          {{#view Sighties.ListView}}
+          <li class="list">
+            {{#if isEditing}}
+              {{edit-list class="edit" value=name focus-out="acceptChanges" insert-newline="acceptChanges"}}
+            {{else}}
+              {{#linkTo "list" list}}{{name}}{{/linkTo}}
+            {{/if}}
+          </li>
+          {{/view}}
+        {{/each}}
+        </ul>
+      </div><!-- #list-master -->
+
+      <div id="list-detail">
+        {{outlet}}
+      </div><!-- #list-detail -->
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="list">
+      <h2>{{name}}</h2>
+      <h3>x cards, y selected</h3>
     </script>
 
     <script src="js/libs/jquery-1.10.2.min.js"></script>
