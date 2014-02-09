@@ -4,7 +4,11 @@ body {
 	padding: 0;
 }
 
-li.bold {
+li.list a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+li.list a.active:link, a.active:visited, a.active:active {
   font-weight: bolder;
 }
 

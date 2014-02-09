@@ -8,6 +8,24 @@ Sighties.ListController = Ember.ObjectController.extend({
       } else {
         this.get('model').save();
       }
+    },
+    handleClick: function() {
+      var clickedList = this;
+      var selectedList = this.parentController.get('selectedList');
+      console.log("EARLY: ListsController.selectedList=" + this.parentController.get('selectedList'));
+      //debugger;
+      if ((selectedList === undefined) || (selectedList === this.get('id'))) {
+        if (clickedList.get('canEdit')) {
+          // Go to edit mode
+          clickedList.set('isEditing', true);
+        } else {
+          // No-op
+        }
+      } else {
+        // Clear selections and select clickedList
+      }
+      this.parentController.set('selectedList', this.get('id'));
+      console.log("LATE: ListsController.selectedList=" + this.parentController.get('selectedList'));
     }
   }
 });
