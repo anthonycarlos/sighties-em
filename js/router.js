@@ -19,9 +19,6 @@ Sighties.ListsRoute = Ember.Route.extend({
 Sighties.ListRoute = Ember.Route.extend({
   setupController: function(controller, model) {
     controller.set('model', model);
-    //debugger;
-    console.log("ListRoute here. My model id=" + model.get('id'));
-    //controller.parentController.set('selectedList', model.get('id'));
   },
   model: function(params) {
     return Sighties.List.store.find('list', params.list_id);
