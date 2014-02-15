@@ -2,45 +2,45 @@ Sighties.Card = DS.Model.extend({
   name: DS.attr('string')
 });
 
-Sighties.List.FIXTURES = [
+Sighties.Card.FIXTURES = [
   {
-    id: 1,
+    id: '1001',
     name: "said"
   },
   {
-    id: 2,
+    id: '1002',
     name: "it"
   },
   {
-    id: 3,
+    id: '1003',
     name: "is"
   },
   {
-    id: 4,
+    id: '1004',
     name: "he"
   },
   {
-    id: 5,
+    id: '1005',
     name: "am"
   },
   {
-    id: 6,
+    id: '1006',
     name: "I"
   },
   {
-    id: 7,
+    id: '1007',
     name: "come"
   },
   {
-    id: 8,
+    id: '1008',
     name: "here"
   },
   {
-    id: 9,
+    id: '1009',
     name: "no"
   },
   {
-    id: 10,
+    id: '1010',
     name: "on"
   }
 ];

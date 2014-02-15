@@ -31,7 +31,10 @@
 
     <script type="text/x-handlebars" data-template-name="list">
       <h2>{{name}}</h2>
-      <h3>x cards, y selected</h3>
+      <h3>{{cards.length}} cards, y selected</h3>
+      {{#each card in cards}}
+        <li>{{card.name}}</li>
+      {{/each}}
     </script>
 
     <script src="js/libs/jquery-1.10.2.min.js"></script>
@@ -45,6 +48,8 @@
     <script src="js/views/list_view.js"></script>
     <script src="js/controllers/lists_controller.js"></script>
     <script src="js/views/edit_list_view.js"></script>
+    <script src="js/models/card.js"></script>
+    <script src="js/controllers/cards_controller.js"></script>
   </body>
 </html>
 
