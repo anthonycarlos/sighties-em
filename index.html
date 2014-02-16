@@ -21,6 +21,9 @@
           </li>
           {{/view}}
         {{/each}}
+        {{#if isCreating}}
+          <li>{{input type="text" id="new-list" placeholder="New list name" value=newListName action="createList"}}</li>
+        {{/if}}
         </ul>
       </div><!-- #list-master -->
 
