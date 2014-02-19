@@ -12,8 +12,6 @@ Sighties.ListController = Ember.ObjectController.extend({
     handleClick: function() {
       var clickedList = this;
       var selectedList = this.parentController.get('selectedList');
-      console.log("EARLY: ListsController.selectedList=" + this.parentController.get('selectedList'));
-      //debugger;
       if ((selectedList === undefined) || (selectedList === this.get('id'))) {
         if (clickedList.get('canEdit')) {
           // Go to edit mode
@@ -25,7 +23,6 @@ Sighties.ListController = Ember.ObjectController.extend({
         // Clear selections and select clickedList
       }
       this.parentController.set('selectedList', this.get('id'));
-      console.log("LATE: ListsController.selectedList=" + this.parentController.get('selectedList'));
     }
   }
 });
