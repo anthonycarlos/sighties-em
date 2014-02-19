@@ -12,7 +12,7 @@ Sighties.ListController = Ember.ObjectController.extend({
     handleClick: function() {
       var clickedList = this;
       var selectedList = this.parentController.get('selectedList');
-      if ((selectedList === undefined) || (selectedList === this.get('id'))) {
+      if (selectedList === this.get('id')) {
         if (clickedList.get('canEdit')) {
           // Go to edit mode
           clickedList.set('isEditing', true);
