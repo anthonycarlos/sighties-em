@@ -2,40 +2,34 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Sighties</title>
+    <title>Selections</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <script type="text/x-handlebars" data-template-name="lists">
-      <div id="list-master">
-        <h2>Lists</h2>
-        <ul>
-        {{#each list in controller itemController="list"}}
-          {{#view Sighties.ListView}}
-          <li class="list">
-            {{#if isEditing}}
-              {{edit-list class="edit" value=name focus-out="acceptChanges" insert-newline="acceptChanges"}}
-            {{else}}
-              {{#linkTo "list" list}}{{name}}{{/linkTo}}
-            {{/if}}
-          </li>
-          {{/view}}
-        {{/each}}
-        </ul>
-      </div><!-- #list-master -->
 
-      <div id="list-detail">
-        {{outlet}}
-      </div><!-- #list-detail -->
-    </script>
+  <script type="text/x-handlebars" data-template-name="songs">
+    <h2>Songs</h2>
+    <ul>
+    {{log controller}}
+    {{#view "songlist"}}
+    {{#each song in controller}}
+      <li {{action "handleClick" song on="click" allowedKeys="shift"}}{{bind-attr class="isSelected:selected:unselected"}}>
+        {{ song.name }}
+      </li>
+    {{/each}}
+    {{/view}}
+    </ul>
+  </script>
 
-    <script type="text/x-handlebars" data-template-name="list">
-      <h2>{{name}}</h2>
-      <h3>{{cards.length}} cards, y selected</h3>
-      {{#each card in cards}}
-        <li>{{card.name}}</li>
-      {{/each}}
-    </script>
+  <div>
+    <p>
+      Goal: I want to create a simple ember application that has a list of
+      songs. When I click on a song, it should highlight to show me that it is
+      selected. If I click on a different song, the highlighting should change
+      to show that my selection has changed. If I double-click a song, it
+      should enter an inline editing mode.
+    </p>
+  </div>
 
     <script src="js/libs/jquery-1.10.2.min.js"></script>
     <script src="js/libs/handlebars-1.0.0.js"></script>
@@ -43,13 +37,9 @@
     <script src="js/libs/ember-data.js"></script>
     <script src="js/application.js"></script>
     <script src="js/router.js"></script>
-    <script src="js/models/list.js"></script>
-    <script src="js/controllers/list_controller.js"></script>
-    <script src="js/views/list_view.js"></script>
-    <script src="js/controllers/lists_controller.js"></script>
-    <script src="js/views/edit_list_view.js"></script>
-    <script src="js/models/card.js"></script>
-    <script src="js/controllers/cards_controller.js"></script>
+    <script src="js/models/song.js"></script>
+    <script src="js/controllers/song_controller.js"></script>
+    <script src="js/controllers/songs_controller.js"></script>
   </body>
 </html>
 

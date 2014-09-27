@@ -1,5 +1,5 @@
-window.Sighties = Ember.Application.create({
+window.Selections = Ember.Application.create({
   LOG_TRANSITIONS: true
 });
 
-Sighties.ApplicationAdapter = DS.FixtureAdapter.extend();
+Selections.ApplicationAdapter = DS.FixtureAdapter.extend();
