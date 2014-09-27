@@ -13,7 +13,7 @@
     {{log controller}}
     {{#view "songlist"}}
     {{#each song in controller}}
-      <li {{action "handleClick" song on="click" allowedKeys="shift"}}{{bind-attr class="isSelected:selected:unselected"}}>
+      <li {{bind-attr id="song.id" class="isSelected lastSelected"}}>
         {{ song.name }}
       </li>
     {{/each}}
@@ -40,6 +40,7 @@
     <script src="js/models/song.js"></script>
     <script src="js/controllers/song_controller.js"></script>
     <script src="js/controllers/songs_controller.js"></script>
+    <script src="js/views/songlist_view.js"></script>
   </body>
 </html>
 

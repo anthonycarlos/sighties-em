@@ -1,3 +1,4 @@
 Selections.SongController = Ember.ObjectController.extend({
-  isSelected: false
+  isSelected: false,
+  lastSelected: false 
 })

@@ -4,8 +4,11 @@ body {
 	padding: 0;
 }
 
-li.selected {
+li.is-selected {
   font-weight: bolder;
+}
+li.last-selected {
+  border: thin dashed blue;
 }
 
 div#list-master {
