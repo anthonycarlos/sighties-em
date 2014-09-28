@@ -16,16 +16,18 @@ Selections.SongsController = Ember.ArrayController.extend({
       console.log('e=' + e);
       console.log('e.metaKey=' + e.metaKey);
       console.log('e.shiftKey=' + e.shiftKey);
-      this.forEach(function(item) {
-        console.log('setting isSelected of ' + item + ' to false');
-        item.set('isSelected', false);
-        console.log('setting lastSelected of ' + item + ' to false');
-        item.set('lastSelected', false);
-      });
+
+      this.clearSelections();
       console.log('Finally setting isSelected of song id ' + target_id + ' to true');
       clickedSongController.set('isSelected', true);
       console.log('Finally setting lastSelected of song id ' + target_id + ' to true');
       clickedSongController.set('lastSelected', true);
     }
+  },
+  clearSelections: function() {
+    this.forEach(function(item) {
+      item.set('isSelected', false);
+      item.set('lastSelected', false);
+    });
   }
 });
